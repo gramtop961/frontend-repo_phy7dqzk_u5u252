@@ -1,26 +1,36 @@
-import { useState } from 'react'
+import Hero from './components/Hero'
+import ContentSections from './components/ContentSections'
+import ShowcaseSections from './components/ShowcaseSections'
+import ConversionSections from './components/ConversionSections'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+    <div className="scroll-smooth bg-black text-white">
+      {/* Navigation */}
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 text-sm">
+          <a href="#top" className="font-semibold tracking-tight">Alpha AutoStudio</a>
+          <div className="hidden gap-6 text-white/80 sm:flex">
+            <a href="#services" className="hover:text-white">Services</a>
+            <a href="#process" className="hover:text-white">Process</a>
+            <a href="#portfolio" className="hover:text-white">Portfolio</a>
+            <a href="#pricing" className="hover:text-white">Pricing</a>
+          </div>
+          <a
+            href="#start"
+            className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-4 py-2 font-medium text-white shadow-cyan-500/20 hover:shadow-lg"
           >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+            Start Now
+          </a>
+        </nav>
+      </header>
+
+      <main>
+        <Hero />
+        <ContentSections />
+        <ShowcaseSections />
+        <ConversionSections />
+      </main>
     </div>
   )
 }
